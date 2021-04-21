@@ -70,7 +70,7 @@ function App() {
     <>
       <NavBar queryData={queryData} setSearch= {setSearch} />
       <ListNews loading={loading} data={data} />
-      <PageNavigation page={page} nbPages={nbPages} handleNextClick={handleNextClick} handleBackClick={handleBackClick} />
+      <PageNavigation page={page} nbPages={nbPages} handleNextClick={handleNextClick} handleBackClick={handleBackClick} loading={loading} />
     </>
   );
 }

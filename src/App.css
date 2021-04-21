@@ -15,4 +15,10 @@ h1 {
   background-color: rgb(204, 223, 221);
 }
 
+.displayOff {
+  display: none ;
+}
 
+span {
+  padding: 0 2rem 0 2rem;
+}

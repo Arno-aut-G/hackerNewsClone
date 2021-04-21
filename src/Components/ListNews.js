@@ -15,7 +15,7 @@ const ListNews = ({loading, data}) => {
             </li>
           ))} 
         </ul>
-      </div> : <ReactBootstrap.Spinner animation="border" /> }
+      </div> : <div className='spinner'> <ReactBootstrap.Spinner animation="border" /> Loading... </div> }
       </>
     );
     

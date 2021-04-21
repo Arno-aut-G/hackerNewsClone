@@ -4,13 +4,9 @@ import '../App.css';
 
 const PageNavigation = ({ page, nbPages, handleNextClick, handleBackClick, loading }) => {
 
-
-
-    
-
     return (
         <>
-        <div className='footer'>
+        <div className = {loading ? 'footer' : 'displayOff' }>
         <div>
           <ReactBootstrap.Button variant="dark" onClick={handleBackClick} disabled={page === 0}>Back</ReactBootstrap.Button>
           <span>{page + 1}</span>
