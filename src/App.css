@@ -4,14 +4,17 @@
   background-color: rgb(88, 144, 146);
   height: 100%;
 }
- 
-h1 {
-  display: block;
-}
+
 
 .news-list {
   display: flex;
   justify-content: flex-start;
+}
+
+.list-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: rgb(204, 223, 221);
 }
 
@@ -19,6 +22,18 @@ h1 {
   display: none ;
 }
 
+.displayOn {
+  display: block;
+}
+
 span {
   padding: 0 2rem 0 2rem;
+}
+
+li {
+  padding: .5rem 0 .5rem 0;
+}
+
+.errMessages {
+  text-align: center;
 }
