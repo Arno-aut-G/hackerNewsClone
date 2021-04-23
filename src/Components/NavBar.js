@@ -4,10 +4,6 @@ import '../App.css';
 
 const NavBar = ({ queryData, setSearch, setHitsPerPage }) => {
 
-  const handleHits = (id) => {
-    setHitsPerPage(id)
-    console.log(id)
-  }
 
   return (
     <>
@@ -27,7 +23,7 @@ const NavBar = ({ queryData, setSearch, setHitsPerPage }) => {
         </div>
         <div>
           <ReactBootstrap.DropdownButton variant="dark" id="dropdown-basic-button" title="Items per page">
-            <ReactBootstrap.Dropdown.Item onClick={() => handleHits(15)}>15</ReactBootstrap.Dropdown.Item>
+            <ReactBootstrap.Dropdown.Item onClick={() => setHitsPerPage(15)}>15</ReactBootstrap.Dropdown.Item>
             <ReactBootstrap.Dropdown.Item onClick={() => setHitsPerPage(25)}>25</ReactBootstrap.Dropdown.Item>
             <ReactBootstrap.Dropdown.Item onClick={() => setHitsPerPage(50)}>50</ReactBootstrap.Dropdown.Item>
           </ReactBootstrap.DropdownButton>

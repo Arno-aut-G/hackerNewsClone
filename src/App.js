@@ -29,10 +29,10 @@ function App() {
       fetchData();
     }, 300000)
     return () => clearInterval(interval);
-  }, [query, hitsPerPage])
+  }, [query, hitsPerPage, page])
 
   const fetchData = async () => {
-    await Axios.get(`https://hn.algolia.com/api/v1/search?query=${query}&page=${page}&hitsPerPage=${hitsPerPage}`)
+    await Axios.get(`https://hn.algolia.com/api/v1/search_by_date?query=${query}&page=${page}&hitsPerPage=${hitsPerPage}`)
       .then(response => {
         setData(response.data.hits);
         setNbPages(response.data.nbPages)
@@ -60,12 +60,10 @@ function App() {
 
   const handleNextClick = () => {
     setPage(prev => prev + 1)
-    fetchData();
   }
 
   const handleBackClick = () => {
     setPage(prev => prev - 1)
-    fetchData();
   }
 
   console.log(data)
