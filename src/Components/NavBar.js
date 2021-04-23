@@ -10,7 +10,10 @@ const NavBar = ({ queryData, setSearch, setHitsPerPage }) => {
       <div className='navbar'>
         <div><h1>HackerNews </h1></div>
         <div>
-          <ReactBootstrap.Form onSubmit={queryData} >
+          <ReactBootstrap.Form onSubmit={() => {
+            queryData()
+            setSearch('')
+          }} >
             <ReactBootstrap.Form.Row>
               <ReactBootstrap.Col xs="auto">
                 <ReactBootstrap.Form.Control type="text" placeholder="Search here.." onChange={(e) => setSearch(e.target.value)} />

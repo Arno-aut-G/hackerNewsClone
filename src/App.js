@@ -36,13 +36,11 @@ function App() {
       .then(response => {
         setData(response.data.hits);
         setNbPages(response.data.nbPages)
-        if (response.data.hits.length === 0) {
-          setNomatch(true)
-        } else { setNomatch(false) }
       })
       .catch(error => setErrorIn(error.message)) //setErrorIn with error.message here
     setLoading(true);
   }
+  console.log(data)
 
   /* const queryData = (e) => {
     e.preventDefault()
@@ -55,7 +53,9 @@ function App() {
       setQuery('...')
     } else {
       setQuery(search)
+
     }
+    setSearch('')
   }
 
   const handleNextClick = () => {
@@ -72,8 +72,8 @@ function App() {
     <>
       <NavBar queryData={queryData} setSearch={setSearch} setHitsPerPage={setHitsPerPage} />
       {errorIn && <Error errorIn={errorIn} setErrorIn={setErrorIn} />}
-      {nomatch && <Nomatch setNomatch={setNomatch} />}
-      <ListNews loading={loading} data={data} />
+      {!data.length ? <Nomatch setNomatch={setNomatch} /> :
+        <ListNews loading={loading} data={data} />}
       <PageNavigation page={page} nbPages={nbPages} handleNextClick={handleNextClick} handleBackClick={handleBackClick} loading={loading} />
     </>
   );
