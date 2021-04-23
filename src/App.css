@@ -19,6 +19,10 @@ h1 {
   display: none ;
 }
 
+.errMessages {
+  text-align: center;
+}
+
 span {
   padding: 0 2rem 0 2rem;
 }
