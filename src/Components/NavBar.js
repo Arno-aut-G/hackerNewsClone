@@ -10,8 +10,9 @@ const NavBar = ({ queryData, setSearch, setHitsPerPage }) => {
       <div className='navbar'>
         <div><h1>HackerNews </h1></div>
         <div>
-          <ReactBootstrap.Form onSubmit={() => {
-            queryData()
+          <ReactBootstrap.Form onSubmit={(e) => {
+            queryData(e)
+            e.target.reset()
             setSearch('')
           }} >
             <ReactBootstrap.Form.Row>
