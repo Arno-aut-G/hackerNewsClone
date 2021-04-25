@@ -5,6 +5,14 @@
   height: 100%;
 }
 
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(39, 38, 38);
+}
+h1:hover {
+  transform: scale(1.1);
+}
+
 .news-list {
   display: flex;
   justify-content: flex-start;
@@ -27,13 +35,15 @@
 
 span {
   padding: 0 2rem 0 2rem;
+  font-weight: bold;
 }
 ul {
   list-style-type: disclosure-closed;
+  padding-top: 1rem;
 }
 
 li {
-  padding: .5rem 0 .5rem 0;
+  padding: .3rem 0 .3rem 0;
 }
 
 .errMessages {

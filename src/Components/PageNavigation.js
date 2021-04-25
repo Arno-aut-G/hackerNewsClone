@@ -8,9 +8,9 @@ const PageNavigation = ({ page, nbPages, handleNextClick, handleBackClick, loadi
         <>
        <div className = {loading ? 'footer' : 'displayOff' }>
         <div>
-          <ReactBootstrap.Button variant="dark" onClick={handleBackClick} disabled={page === 1}>Back</ReactBootstrap.Button>
+          <ReactBootstrap.Button variant="outline-dark" onClick={handleBackClick} disabled={page === 1}>Back</ReactBootstrap.Button>
           <span>{page }</span>
-          <ReactBootstrap.Button variant="dark" onClick={handleNextClick} disabled={page === nbPages}>Next</ReactBootstrap.Button>
+          <ReactBootstrap.Button variant="outline-dark" onClick={handleNextClick} disabled={page === nbPages}>Next</ReactBootstrap.Button>
         </div>
         </div>
         </>
