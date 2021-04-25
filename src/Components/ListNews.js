@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
 import '../App.css';
 
@@ -9,19 +9,21 @@ const ListNews = ({loading, data, setData, click, setClick}) => {
     const getList = data.filter(e => {
       return e.objectID === id })
     setData(getList)
-    setClick(!click);
+    setClick(true);
    
   }
  
 
     return (
       <div className='list-items'>
-        { loading ? <div className='news-list'>
-        <ol>
+        <div className='news-list'>
+        <ul>
           {data.map(e => (
-            <li key={e.objectID} onClick={() => handleListClick(e.objectID)}>
-              <h5>{e.title ? e.title : e.story_title}</h5>
-              <a target="_blank" rel="noreferrer" href={e.url ? e.url : e.story_url}>{e.title ? e.title : e.story_title}</a>
+            <li key={e.objectID}>
+              <h5 onClick={() => handleListClick(e.objectID)}>
+                {e.title ? e.title : e.story_title} </h5>
+              <a target="_blank" rel="noreferrer" href={e.url ? e.url : e.story_url}>
+                    Read More..</a>
               <div className={ click ? 'displayOn' : 'displayOff' }> 
                 <div>
                   <p>Author: {e.author}</p>
@@ -29,11 +31,12 @@ const ListNews = ({loading, data, setData, click, setClick}) => {
                   <p>Comments: {e.num_comments}</p>
                   <p>Points: {e.points}</p>
                 </div>
+                <a href='index.html'>Back to Home</a>
               </div>
             </li>
           ))} 
-        </ol>
-      </div> : <div className='spinner'> <ReactBootstrap.Spinner animation="border" /> Loading... </div> }
+        </ul>
+      </div>
       </div>
     );
     

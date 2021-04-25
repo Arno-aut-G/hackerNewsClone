@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../App.css';
 
 const Nomatch = () => {
 
     return (
-        <h3 className="errMessages"> No match for your search</h3>
+        <div className='errMessages'>
+        <h3> No match found for your search</h3>
+        <a href='index.html'>Back to Home</a>
+        </div>
     )
 }
 
