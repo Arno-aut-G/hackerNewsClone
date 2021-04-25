@@ -55,6 +55,7 @@ function App() {
     e.preventDefault()
     if (search === '') {
       setQuery('')
+      alert('Please enter some text');
     }
     else{
       setQuery(search);
@@ -79,7 +80,7 @@ function App() {
   return (
     <div className='container'>
       <NavBar queryData={queryData} setSearch= {setSearch} titleRef={titleRef} setHitsPerPage={setHitsPerPage} setClick={setClick}/>
-      {!loading ? <div className='spinner'> <ReactBootstrap.Spinner animation="border" />  <span>Loading... </span></div> :
+      {!loading ? <div className='spinner'> <ReactBootstrap.Spinner animation="border" /></div> :
       errorIn ? <Error errorIn={errorIn}/> : !data.length ? <Nomatch /> :
       <div>
       <ListNews loading={loading} data={data} setData={setData} click={click} setClick={setClick}/>
