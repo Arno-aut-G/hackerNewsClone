@@ -57,3 +57,8 @@ li {
   justify-content: center;
   padding-top: 5rem;
 }
+
+h5:hover {
+  color: rgb(88, 144, 146);
+  cursor: pointer;
+}
